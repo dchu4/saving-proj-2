@@ -12,7 +12,12 @@ public class GameController : MonoBehaviour {
 	public GameObject secondLife;
 	public GameObject firstLife;
 
-	void Update(){
+	public int getLives(){
+		return lives;
+	}
+
+	public void subtractLife(){
+		lives -= 1;
 		if (lives == 2) {
 			Destroy (thirdLife.gameObject);
 		} else if (lives == 1) {
@@ -20,14 +25,6 @@ public class GameController : MonoBehaviour {
 		} else if(lives == 0) {
 			Destroy (firstLife.gameObject);
 		}
-	}
-
-	public int getLives(){
-		return lives;
-	}
-
-	public void subtractLife(){
-		lives -= 1;
 	}
 
 	public void spawnPopcorn (){
